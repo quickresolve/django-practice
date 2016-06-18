@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from inventory import views
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index, name = 'index'), #sets root to index view
+    url(r'^item/(?P<id>\d+)/', views.item_detail, name = 'item_detail'), #sets item with id num to item_detail view
+    url(r'^admin/', admin.site.urls), #sets /admin to admin views
 ]
