@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Item
+#import Item model into admin
+
+admin.site.register(Item)
+#register Item with admin for CRUD functionality
