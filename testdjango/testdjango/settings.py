@@ -125,3 +125,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'testdjango', 'static'),
 )
+#join static route to BASE_DIR in project
