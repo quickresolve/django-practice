@@ -1,5 +1,5 @@
 # django-practice
-Practice with Django Framework for Python
+Practice with Django Framework for Python by creating an Inventory Web App
 
 
 Django is a python web framework. It works with apache or engineX.
@@ -70,12 +70,55 @@ DEFAULT_FROM_EMAIL = 'webmaster@example.com'
 - TEMPLATES (when adding templates for the first time)
 - STATICFILES_DIRS (adding static assets for the first time)
 
+
 ##Settings that may need to be changes in settings.py
 
 - Debug (when deploying to production, set to false)
 - Databases (when changing engines such as PostgreSQL, MySQL, etc.)
 - Smaller settings when needed (consult documentation)
   ex: static root, admin, configurations
+
+
+
+##Models.py
+
+Models.py is responsible for creating a data layer of the app. Here you define the database structure. It also allows you to query the database.
+
+A model is a class inheriting from django.db.models. It is used to define fields as class attributes for each record.
+
+
+## Field Types
+
+-Textual Data
+  * CharField, TextField, EmailField, URLField
+
+-Numeric Data
+  *IntegerField, DecimalField
+
+-File Data
+  *FileField, ImageField
+
+-Misc Data
+  *BooleanField, DateTimeField
+
+ex: models.CharField(max_length=10, null=True, blank=True)
+
+##Field Attribute Options
+  [django/docs/models/fields]
+
+-max_length (CharField)
+-null (no data)
+-blank (emptry string)
+-default (default value)
+-choices (limit choices)
+
+##Migrations
+
+Migrations generates scripts to change the database structure. The initial migration creates corresponding database tables when a new model is defined. Additional migrations are needed when adding a db field, removing a field, or changing a field.
+
+###Migration Commands
+- python manage.py make migrations
+- python manage
 
 
 
